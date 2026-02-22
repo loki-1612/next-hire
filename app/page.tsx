@@ -1,23 +1,29 @@
+import JobCard from "@/components/Jobcard";
+import { mockJobs } from "@/components/mockJobs";
 export default function Home() {
   return (
     <main className="bg-slate-50">
-      <section className="max-w-6xl mx-auto px-6 py-24 text-center">
-        
-        <h2 className="text-5xl font-bold tracking-tight text-slate-900">
-          Find Your Next Career Move
-        </h2>
-
-        <p className="mt-6 text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-          Discover top opportunities from leading companies.
-          Filter by role, location, and salary to find the job that fits you best.
-        </p>
-
-        <div className="mt-10">
-          <button className="px-8 py-3 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition shadow-sm">
-            Browse Jobs
-          </button>
+      <section className="max-w-6xl mx-auto px-6 py-20">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-slate-900">
+            Latest Job Opportunities
+          </h2>
+          <p className="mt-3 text-slate-500">
+            Explore curated opportunities from top companies
+          </p>
         </div>
 
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {mockJobs.map((job) => (
+            <JobCard
+              key={job.id}
+              title={job.title}
+              company={job.company}
+              location={job.location}
+              salary={job.salary}
+            />
+          ))}
+        </div>
       </section>
     </main>
   );
