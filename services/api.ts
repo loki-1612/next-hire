@@ -1,27 +1,9 @@
-export interface Job {
-  id: number;
-  title: string;
-  company_name: string;
-  candidate_required_location: string;
-  job_type: string;
-  salary: string;
-  description: string;
-  url:string;
-}
-
+import { Job } from "@/app/types/job";
 
 export async function fetchJobs(): Promise<Job[]> {
-  const response = await fetch(
-    "https://remotive.com/api/remote-jobs",
-    {
-        next: { revalidate: 3600 }
-    }  
-  );
+  const res = await fetch("https://remotive.com/api/remote-jobs");
 
-  if (!response.ok) {
-    throw new Error("Failed to fetch jobs");
-  }
+  const data = await res.json();
 
-  const data = await response.json();
   return data.jobs;
 }
