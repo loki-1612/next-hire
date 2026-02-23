@@ -12,7 +12,7 @@ interface SearchParams {
 }
 
 interface PageProps {
-  searchParams: Promise<SearchParams>; // ✅ Important change
+  searchParams: Promise<SearchParams>;
 }
 
 export async function generateMetadata({
@@ -113,6 +113,7 @@ export default async function Home({ searchParams }: PageProps) {
           paginatedJobs.map((job) => (
             <JobCard
               key={job.id}
+              id={String(job.id)}
               title={job.title}
               company={job.company_name}
               location={job.candidate_required_location}

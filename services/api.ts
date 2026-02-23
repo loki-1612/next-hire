@@ -5,6 +5,8 @@ export interface Job {
   candidate_required_location: string;
   job_type: string;
   salary: string;
+  description: string;
+  url:string;
 }
 
 
