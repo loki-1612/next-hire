@@ -35,7 +35,10 @@ export default function RootLayout({
               <Link href="/" className="hover:text-slate-900 transition">
                 Jobs
               </Link>
-              <Link href="/companies" className="hover:text-slate-900 transition">
+              <Link
+                href="/companies"
+                className="hover:text-slate-900 transition"
+              >
                 Companies
               </Link>
               <Link href="/about" className="hover:text-slate-900 transition">
@@ -52,18 +55,6 @@ export default function RootLayout({
         <footer className="bg-white border-t border-slate-200 mt-16">
           <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
             <p>© {new Date().getFullYear()} NextHire. All rights reserved.</p>
-
-            <div className="space-x-6 mt-4 md:mt-0">
-              <a href="#" className="hover:text-slate-900 transition">
-                Privacy
-              </a>
-              <a href="#" className="hover:text-slate-900 transition">
-                Terms
-              </a>
-              <a href="#" className="hover:text-slate-900 transition">
-                Contact
-              </a>
-            </div>
           </div>
         </footer>
       </body>

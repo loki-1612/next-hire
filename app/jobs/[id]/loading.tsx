@@ -1,4 +1,4 @@
-import SkeletonCard from "@/components/SkeletonCard";
+import SkeletonCard from "@/components/ui/SkeletonCard";
 export default function Loading() {
   return (
     <div className="max-w-4xl mx-auto px-6 py-16 animate-pulse">
