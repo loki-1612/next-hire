@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 NextHire – Remote Job Discovery Platform
 
-## Getting Started
+NextHire is a modern remote job discovery platform built with Next.js App Router.  
+It allows users to browse, filter, and explore curated remote jobs from global companies — fast, simple, and beautifully designed.
 
-First, run the development server:
+🌍 *Live Demo:*  
+👉 https://next-hire-16.vercel.app/
+
+---
+
+## ✨ Features
+
+- 🔍 Smart job search (title, location, type)
+- 📑 Filtering & sorting (latest, salary)
+- 🔖 Save jobs (local storage powered)
+- 🏢 Explore company profiles
+- 🌎 Remote-first curated listings
+- ⚡ Server-side rendering (SSR)
+- 🎬 Smooth UI animations (Framer Motion)
+- 📱 Fully responsive design
+- 🔎 SEO optimized with metadata
+
+---
+
+## 🧠 Use Cases
+
+- Remote job seekers
+- Developers looking for global opportunities
+- Recruiters exploring remote trends
+- Portfolio showcase for Next.js App Router
+
+---
+
+## 🛠 Tech Stack
+
+- *Next.js 16 (App Router)*
+- *TypeScript*
+- *Tailwind CSS*
+- *Framer Motion*
+- *Remotive API*
+- *Vercel (Deployment)*
+
+---
+
+## 📸 Screenshots
+
+### 🏠 Home Page
+![Home Screenshot](./)
+
+### 💼 Jobs Listing
+![Jobs Screenshot](./screenshots/jobs.png)
+
+### 🏢 Companies Page
+![Companies Screenshot](./screenshots/companies.png)
+
+### ℹ About Page
+![About Screenshot](./screenshots/about.png)
+
+---
+
+## ⚙ Installation & Setup
+
+Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+git clone https://github.com/loki-1612/next-hire.git
+cd next-hire
