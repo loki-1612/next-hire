@@ -44,9 +44,6 @@ It allows users to browse, filter, and explore curated remote jobs from global c
 
 ## 📸 Screenshots
 
-### 🏠 Home Page
-![Home Screenshot](./)
-
 ### 💼 Jobs Listing
 ![Jobs Screenshot](./screenshots/jobs.png)
 
