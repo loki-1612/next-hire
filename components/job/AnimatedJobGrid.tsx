@@ -31,7 +31,7 @@ export default function AnimatedJobGrid({ jobs }: Props) {
     >
       {jobs.map((job) => (
         <motion.div key={job.id} variants={item}>
-          <JobCard job={job} />
+          <JobCard key={job.id} job={job} />
         </motion.div>
       ))}
     </motion.div>

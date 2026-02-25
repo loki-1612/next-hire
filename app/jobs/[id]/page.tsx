@@ -84,8 +84,9 @@ export default async function JobDetails({ params }: PageProps) {
   }
 
   const cleanDescription =
-    job.description?.replace(/<img[^>]*>/g, "") ??
-    "No description available.";
+    job.description
+      ?.replace(/<img[^>]*>/g, "")
+      .replace(/ style="[^"]*"/g, "") ?? "No description available.";
 
   return (
     <section className="max-w-6xl mx-auto px-6 py-16">
@@ -111,7 +112,7 @@ export default async function JobDetails({ params }: PageProps) {
           </div>
 
           <div
-            className="mt-8 prose max-w-none"
+            className="mt-8 prose prose-slate max-w-3xl leading-7"
             dangerouslySetInnerHTML={{
               __html: cleanDescription,
             }}
@@ -119,10 +120,8 @@ export default async function JobDetails({ params }: PageProps) {
         </div>
 
         {/* Sticky Apply Card */}
-        <div className="border rounded-xl p-6 h-fit sticky top-24 shadow-sm">
-          <h3 className="font-semibold text-lg mb-4">
-            Apply for this role
-          </h3>
+        <div className="bg-white rounded-2xl p-8 h-fit sticky top-24 border border-slate-100 shadow-sm">
+          <h3 className="font-semibold text-lg mb-4">Apply for this role</h3>
 
           <p className="text-sm text-slate-500 mb-6">
             Submit your application on the official company page.
@@ -141,9 +140,7 @@ export default async function JobDetails({ params }: PageProps) {
 
       {/* Related Jobs */}
       <div className="mt-20 border-t pt-12">
-        <h2 className="text-2xl font-semibold mb-8">
-          Related Jobs
-        </h2>
+        <h2 className="text-2xl font-semibold mb-8">Related Jobs</h2>
 
         <div className="grid sm:grid-cols-2 gap-8">
           {jobs
@@ -153,11 +150,9 @@ export default async function JobDetails({ params }: PageProps) {
               <Link
                 key={related.id}
                 href={`/jobs/${related.id}`}
-                className="border rounded-xl p-6 hover:shadow-lg transition"
+                className="bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-md transition px-6 py-5"
               >
-                <h3 className="font-semibold text-lg">
-                  {related.title}
-                </h3>
+                <h3 className="font-semibold text-lg">{related.title}</h3>
                 <p className="text-sm text-slate-500 mt-2">
                   {related.company_name}
                 </p>

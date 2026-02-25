@@ -11,15 +11,15 @@ interface Props {
 export default function Pagination({ totalPages, currentPage }: Props) {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const pathname = usePathname(); // ✅ important
+  const pathname = usePathname();
 
   const handlePageChange = (pageNumber: number) => {
+    if (pageNumber === currentPage) return; // ✅ Don't navigate if same page
+
     const params = new URLSearchParams(searchParams.toString());
     params.set("page", String(pageNumber));
 
-    router.push(`${pathname}?${params.toString()}`, {
-      scroll: false, // ✅ prevent jump
-    });
+    router.push(`${pathname}?${params.toString()}`); // ✅ No scroll:false
   };
 
   return (
@@ -38,10 +38,11 @@ export default function Pagination({ totalPages, currentPage }: Props) {
             onClick={() => handlePageChange(pageNumber)}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            disabled={isActive} // ✅ Disable active page button
             className={`px-4 py-2 rounded-lg border text-sm font-medium transition-all duration-200 ${
               isActive
-                ? "bg-black text-white border-black shadow-md"
-                : "bg-white hover:bg-black hover:text-white hover:border-black"
+                ? "bg-black text-white border-black shadow-md cursor-default"
+                : "bg-white hover:bg-black hover:text-white hover:border-black cursor-pointer"
             }`}
           >
             {pageNumber}

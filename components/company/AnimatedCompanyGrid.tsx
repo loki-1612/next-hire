@@ -33,21 +33,32 @@ export default function AnimatedCompanyGrid({ companies }: Props) {
       variants={containerVariants}
       initial="hidden"
       animate="show"
-      className="grid md:grid-cols-3 gap-8"
+      className="grid md:grid-cols-3 gap-8 auto-rows-fr" // ✅ important
     >
       {companies.map((company) => (
-        <motion.div key={company.name} variants={itemVariants}>
+        <motion.div
+          key={company.name}
+          variants={itemVariants}
+          className="h-full" // ✅ important
+        >
           <Link
             href={`/companies/${slugify(company.name)}`}
-            className="group border rounded-xl p-6 bg-white hover:shadow-xl transition duration-300 hover:-translate-y-1 block"
+            className="group rounded-2xl p-6 bg-white shadow-sm
+                       hover:shadow-xl border border-slate-100 transition-all duration-300 
+                       hover:-translate-y-1 
+                       flex flex-col h-full" // ✅ important
           >
             <h3 className="text-lg font-semibold text-slate-900">
               {company.name}
             </h3>
 
-            <p className="text-sm text-slate-500 mt-2">{company.location}</p>
+            {/* Limit long location text */}
+            <p className="text-sm text-slate-500 mt-2 line-clamp-2">
+              {company.location}
+            </p>
 
-            <p className="text-sm mt-4 text-slate-700 font-medium">
+            {/* Push to bottom */}
+            <p className="text-sm mt-auto pt-4 text-slate-700 font-medium">
               {company.count} open position
               {company.count > 1 ? "s" : ""}
             </p>

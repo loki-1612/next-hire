@@ -1,15 +1,18 @@
 "use client";
 
 import Link from "next/link";
-import BookmarkButton from "./BookmarkButton";
 import { Job } from "@/types/job";
 import { motion } from "framer-motion";
+import { useSavedJobs } from "@/context/savedJobContext";
 
 interface JobCardProps {
   job: Job;
 }
 
 export default function JobCard({ job }: JobCardProps) {
+  const { toggleSave, isSaved } = useSavedJobs(); // ✅ inside component
+  const saved = isSaved(job.id); // ✅ use actual job instance
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 15 }}
@@ -27,12 +30,21 @@ export default function JobCard({ job }: JobCardProps) {
             </h3>
           </Link>
 
-          <BookmarkButton jobId={job.id} />
+          {/* Save Button */}
+          <button
+            onClick={() => toggleSave(job)}
+            className={`px-3 py-1 text-sm rounded-lg border transition ${
+              saved
+                ? "bg-black text-white border-black"
+                : "bg-white hover:bg-slate-100"
+            }`}
+          >
+            ⭐ {saved ? "Saved" : "Save"}
+          </button>
         </div>
 
         {/* Company Info */}
         <p className="text-slate-500 text-sm mt-2">{job.company_name}</p>
-
         <p className="text-slate-500 text-sm">
           {job.candidate_required_location}
         </p>

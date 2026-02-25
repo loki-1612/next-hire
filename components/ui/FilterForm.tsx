@@ -52,7 +52,7 @@ export default function FilterForm() {
         placeholder="Search by Title"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        className="border border-slate-300 p-3 rounded-lg"
+        className="border border-gray-300 bg-white p-3 rounded-lg text-sm text-gray-700 w-full focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition"
       />
 
       <input
@@ -60,13 +60,13 @@ export default function FilterForm() {
         placeholder="Location"
         value={location}
         onChange={(e) => setLocation(e.target.value)}
-        className="border border-slate-300 p-3 rounded-lg"
+        className="border border-gray-300 bg-white p-3 rounded-lg text-sm text-gray-700 w-full focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition"
       />
 
       <select
         value={type}
         onChange={(e) => setType(e.target.value)}
-        className="border border-slate-300 p-3 rounded-lg"
+        className="border border-gray-300 bg-white p-3 rounded-lg text-sm text-gray-700 w-full focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition"
       >
         <option value="">All Types</option>
         <option value="full_time">Full-time</option>
@@ -76,7 +76,7 @@ export default function FilterForm() {
       <select
         value={sort}
         onChange={(e) => setSort(e.target.value)}
-        className="border border-slate-300 p-3 rounded-lg"
+        className="border border-gray-300 bg-white p-3 rounded-lg text-sm text-gray-700 w-full focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition"
       >
         <option value="latest">Sort: Latest</option>
         <option value="salary">Sort: Salary</option>

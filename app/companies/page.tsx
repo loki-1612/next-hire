@@ -10,6 +10,11 @@ interface Company {
   count: number;
 }
 
+export const metadata = {
+  title: "Explore Companies – NextHire",
+  description: "Browse global companies hiring remote professionals.",
+};
+
 export default async function CompaniesPage() {
   const jobs: Job[] = await fetchJobs();
 
